@@ -18,14 +18,16 @@ def main():
     hours()
 # seperate longest day(s) worked from list 
     longestDay=[]
-    for i in range(len(hoursWorked)):
-        if hoursWorked[i] == max(hoursWorked):    
-            longestDay.append(i)                  #had it as listing the values but changed to list the indexs so I could call back to the day from hours worked.
+    def longDay():
+         for i in range(len(hoursWorked)):
+             if hoursWorked[i] == max(hoursWorked):    
+                longestDay.append(i)  #had listing the values changed to list the indexs so I could call back to the day from hours worked.
 #print longest day(s) 
-    print("----------------------------------------------------------")
-    print("The most hours worked was on:")
-    for i in range(len(longestDay)):    #turned this into a loop to make up for multiple days with the same max hours
-        print(f"Day{longestDay[i]+1} when you worked {hoursWorked[longestDay[i]]} hours")
+         print("----------------------------------------------------------")
+         print("The most hours worked was on:")
+         for i in range(len(longestDay)):    #turned this into a loop to make up for multiple days with the same max hours
+            print(f"Day{longestDay[i]+1} when you worked {hoursWorked[longestDay[i]]} hours")
+    return longestDay
     print("----------------------------------------------------------")
     print(f"The total number or hours worked was: {sum(hoursWorked)}")
     averageHours=sum(hoursWorked)/len(hoursWorked)
