@@ -8,7 +8,9 @@
 
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
-
+    hoursWorked= []
+    for counter in range(5):
+        hoursWorked.append (input(f"Enter Hours Worked on Day # {counter + 1}: "))
 
 
 
