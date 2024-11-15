@@ -7,7 +7,7 @@
 #Student Name:  Jenille Cheney 
 
 # took me forever to remember that functions go OUTSIDE the main function 
-# gave them an underscore to create an empty perameter knowing with in the code it would refer to the list of the same name 
+# gave them an underscore to create an empty perameter knowing within the main function it would refer to the list of the same name 
 def calculateAverageDay(_hoursWorked):
         return sum(_hoursWorked)/len(_hoursWorked)
     
@@ -21,11 +21,11 @@ def printAvgDay(_hoursWorked):
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
     # get input for for daily hours worked / make it a loop 
-    
+    slackHours=7  #orginally hardcoded but read the rubric and turned it into a local variable 
     hoursWorked= []
 
     for counter in range(5):
-            hoursWorked.append(int(input(f"Enter Hours Worked on Day # {counter + 1}: ")))
+            hoursWorked.append(int(input(f"Enter Hours Worked on Day # {counter + 1}: "))) #love this elegant way to use format
         
     #   seperate longest day(s) worked from list 
     longestDay=[]
@@ -46,7 +46,7 @@ def main():
     slackDays=[]
     
     for i in range(len(hoursWorked)):
-            if hoursWorked[i]<7:
+            if hoursWorked[i]<(slackHours):
              slackDays.append(i)
     print("Days you slacked off (i.e. worked less than 7 hours): ")
     for i in range(len(slackDays)):
