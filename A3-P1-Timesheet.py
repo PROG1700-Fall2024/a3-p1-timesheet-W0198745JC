@@ -25,8 +25,18 @@ def main():
     hoursWorked= []
 
     for counter in range(5):
-            hoursWorked.append(int(input(f"Enter Hours Worked on Day # {counter + 1}: "))) #love this elegant way to use format
-        
+            while (True):
+                  try:
+                    string=(int(input(f"Enter Hours Worked on Day # {counter + 1}: "))) #love this elegant way to use format
+                    if (int(string)<=0) or (int(string)>24):                       #recursive loop for hourly error checking 
+                        print("invalid hours added please try again")
+                        main()
+                    else:
+                        hoursWorked.append(string)
+                        break                                               # took me forever to figure out why it just returned to day 1 every error all i needed was a BREAK!
+                  except ValueError:
+                       print("Invalid entry please use a number between 1 and 24!")
+                         
     #   seperate longest day(s) worked from list 
     longestDay=[]
    
